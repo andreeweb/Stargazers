@@ -33,6 +33,14 @@
 		22BF741E254DFD2400A952AB /* GitHubServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF73E9254DE40400A952AB /* GitHubServiceConfig.swift */; };
 		22BF7420254DFD2400A952AB /* Stargazer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF73F4254DF3B300A952AB /* Stargazer.swift */; };
 		22BF7421254DFD2400A952AB /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF73DC254DE3E900A952AB /* GitHubService.swift */; };
+		22BF7430254E0E3D00A952AB /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF742F254E0E3D00A952AB /* ImageService.swift */; };
+		22BF7435254E0E4700A952AB /* ImageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF7434254E0E4700A952AB /* ImageServiceProtocol.swift */; };
+		22BF743A254E0E5800A952AB /* ImageServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF7439254E0E5800A952AB /* ImageServiceError.swift */; };
+		22BF743F254E11E200A952AB /* ImageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF743E254E11E200A952AB /* ImageServiceTests.swift */; };
+		22BF7443254E133100A952AB /* ImageServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF7439254E0E5800A952AB /* ImageServiceError.swift */; };
+		22BF7444254E133100A952AB /* ImageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF7434254E0E4700A952AB /* ImageServiceProtocol.swift */; };
+		22BF7445254E133100A952AB /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF742F254E0E3D00A952AB /* ImageService.swift */; };
+		22BF745B254E15FE00A952AB /* 4189786.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 22BF745A254E15FE00A952AB /* 4189786.jpeg */; };
 		7EFA1E8EEDFDB208B459B015 /* Pods_StargazersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C65502BCE7CC7D7B7A8019E /* Pods_StargazersTests.framework */; };
 		97BD9B22BF0F6E47193D4DBB /* Pods_Stargazers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061981E353F6A6EBCECC4953 /* Pods_Stargazers.framework */; };
 		EEDF0FB27990E7BE44344AC0 /* Pods_Stargazers_StargazersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1955120F2D63980908F81B1C /* Pods_Stargazers_StargazersUITests.framework */; };
@@ -83,6 +91,11 @@
 		22BF73F4254DF3B300A952AB /* Stargazer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stargazer.swift; sourceTree = "<group>"; };
 		22BF7401254DF8AB00A952AB /* GitHubServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubServiceTests.swift; sourceTree = "<group>"; };
 		22BF7407254DFA8700A952AB /* HTTPServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServiceMock.swift; sourceTree = "<group>"; };
+		22BF742F254E0E3D00A952AB /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		22BF7434254E0E4700A952AB /* ImageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceProtocol.swift; sourceTree = "<group>"; };
+		22BF7439254E0E5800A952AB /* ImageServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceError.swift; sourceTree = "<group>"; };
+		22BF743E254E11E200A952AB /* ImageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceTests.swift; sourceTree = "<group>"; };
+		22BF745A254E15FE00A952AB /* 4189786.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4189786.jpeg; sourceTree = "<group>"; };
 		67EA52973ACE7B9A0F2A8DDA /* Pods-Stargazers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stargazers.debug.xcconfig"; path = "Target Support Files/Pods-Stargazers/Pods-Stargazers.debug.xcconfig"; sourceTree = "<group>"; };
 		6BA9EBB0A1D16B0C4B0B5A60 /* Pods-StargazersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StargazersTests.debug.xcconfig"; path = "Target Support Files/Pods-StargazersTests/Pods-StargazersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A6D3F3341EEB139B83E068C9 /* Pods-Stargazers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stargazers.release.xcconfig"; path = "Target Support Files/Pods-Stargazers/Pods-Stargazers.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +181,7 @@
 				2253BD57254DC34A00CA45F4 /* Info.plist */,
 				22BF73D3254DD61000A952AB /* HTTPServiceTests.swift */,
 				22BF7401254DF8AB00A952AB /* GitHubServiceTests.swift */,
+				22BF743E254E11E200A952AB /* ImageServiceTests.swift */,
 			);
 			path = StargazersTests;
 			sourceTree = "<group>";
@@ -184,6 +198,7 @@
 		22BF73BA254DD54A00A952AB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				22BF742E254E0E1A00A952AB /* ImageService */,
 				22BF73DB254DE3D700A952AB /* GitHubService */,
 				22BF73C3254DD58F00A952AB /* HTTPService */,
 			);
@@ -232,9 +247,20 @@
 		22BF7406254DFA6B00A952AB /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				22BF745A254E15FE00A952AB /* 4189786.jpeg */,
 				22BF7407254DFA8700A952AB /* HTTPServiceMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		22BF742E254E0E1A00A952AB /* ImageService */ = {
+			isa = PBXGroup;
+			children = (
+				22BF742F254E0E3D00A952AB /* ImageService.swift */,
+				22BF7434254E0E4700A952AB /* ImageServiceProtocol.swift */,
+				22BF7439254E0E5800A952AB /* ImageServiceError.swift */,
+			);
+			path = ImageService;
 			sourceTree = "<group>";
 		};
 		50986AC9A4608C68EFA94091 /* Pods */ = {
@@ -375,6 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22BF745B254E15FE00A952AB /* 4189786.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,12 +493,15 @@
 				2253BD46254DC34700CA45F4 /* ContentView.swift in Sources */,
 				22BF73EA254DE40400A952AB /* GitHubServiceConfig.swift in Sources */,
 				22BF73CF254DD5AC00A952AB /* HTTPServiceError.swift in Sources */,
+				22BF7430254E0E3D00A952AB /* ImageService.swift in Sources */,
 				22BF73CC254DD5AC00A952AB /* HTTPServiceResponse.swift in Sources */,
 				22BF73EF254DE41000A952AB /* GitHubServiceError.swift in Sources */,
 				22BF73E5254DE3F800A952AB /* GitHubServiceProtocol.swift in Sources */,
 				2253BD44254DC34700CA45F4 /* StargazersApp.swift in Sources */,
+				22BF743A254E0E5800A952AB /* ImageServiceError.swift in Sources */,
 				22BF73CD254DD5AC00A952AB /* HTTPServiceProtocol.swift in Sources */,
 				22BF73DD254DE3E900A952AB /* GitHubService.swift in Sources */,
+				22BF7435254E0E4700A952AB /* ImageServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22BF7408254DFA8700A952AB /* HTTPServiceMock.swift in Sources */,
+				22BF7445254E133100A952AB /* ImageService.swift in Sources */,
 				22BF7421254DFD2400A952AB /* GitHubService.swift in Sources */,
 				22BF7410254DFB9300A952AB /* HTTPServiceResponse.swift in Sources */,
 				22BF741E254DFD2400A952AB /* GitHubServiceConfig.swift in Sources */,
@@ -489,6 +520,9 @@
 				22BF73D4254DD61000A952AB /* HTTPServiceTests.swift in Sources */,
 				22BF741D254DFD2400A952AB /* GitHubServiceError.swift in Sources */,
 				22BF7420254DFD2400A952AB /* Stargazer.swift in Sources */,
+				22BF7443254E133100A952AB /* ImageServiceError.swift in Sources */,
+				22BF743F254E11E200A952AB /* ImageServiceTests.swift in Sources */,
+				22BF7444254E133100A952AB /* ImageServiceProtocol.swift in Sources */,
 				22BF7412254DFB9300A952AB /* HTTPService.swift in Sources */,
 				22BF740F254DFB9300A952AB /* HTTPServiceProtocol.swift in Sources */,
 			);

@@ -62,7 +62,7 @@ class GitHubServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Stargazers download, wrong json")
 
         let httpService = HTTPServiceMock()
-        httpService.validJson = false
+        httpService.jsonType = .InvalidJson
         
         let gitHubService = GitHubService(httpService: httpService)
         

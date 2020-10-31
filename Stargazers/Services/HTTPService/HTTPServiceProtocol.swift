@@ -12,9 +12,6 @@ protocol HTTPServiceProtocol {
     
     /// This function makes HTTP request to the endpoint passed and returns
     /// results wrapped into HTTPServiceResponse object. If an error occurs
-    /// this function returns a HTTPServiceError.
-    ///
-    /// - Parameter endpoint: request endpoint
-    /// - Returns: AnyPublisher<HTTPServiceResponse, HTTPServiceError>
+    /// this function returns a specifi HTTPServiceError.
     func makeHttpRequest(endpoint: String) -> AnyPublisher<HTTPServiceResponse, HTTPServiceError>
 }

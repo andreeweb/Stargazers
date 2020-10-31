@@ -11,11 +11,11 @@ import Combine
 class HTTPService: HTTPServiceProtocol {
     
     func makeHttpRequest(endpoint: String) -> AnyPublisher<HTTPServiceResponse, HTTPServiceError> {
-        
+            
         guard let url = URL(string: endpoint) else {
             return Fail(error: HTTPServiceError.HTTPEndpointNotValid).eraseToAnyPublisher()
         }
-        
+            
         return URLSession.shared
             .dataTaskPublisher(for: url)
             .tryMap { data, response in

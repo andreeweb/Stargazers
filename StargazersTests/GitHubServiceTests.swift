@@ -84,4 +84,32 @@ class GitHubServiceTests: XCTestCase {
         XCTAssertNotNil(remoteDataPublisher)
         wait(for: [expectation], timeout: 5.0)
     }
+    
+    func testRepositoryDoesNotExist() throws {
+        
+        // setup
+        let expectation = XCTestExpectation(description: "Stargazers download, wrong json")
+
+        let httpService = HTTPService()
+        
+        let gitHubService = GitHubService(httpService: httpService)
+        
+        let remoteDataPublisher = gitHubService.getStargazersForRepositoryOwner(repository: "fake", owner: "andreeweb")
+            .sink(receiveCompletion: { completion in
+                                
+                switch completion {
+                case .finished: XCTFail()
+                case .failure(let error):
+                    if case GitHubServiceError.CannotRetrieveStargazers = error {
+                        expectation.fulfill()
+                    }else{
+                        XCTFail()
+                    }
+                }
+                
+            }, receiveValue: { _ in })
+        
+        XCTAssertNotNil(remoteDataPublisher)
+        wait(for: [expectation], timeout: 5.0)
+    }
 }

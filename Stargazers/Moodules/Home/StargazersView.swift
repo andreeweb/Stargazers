@@ -9,26 +9,28 @@ import SwiftUI
 
 struct StargazersView: View {
         
-    @State private var showSearch = false
+    @ObservedObject var viewModel: StargazersViewModel
     
+    @State private var showSearch = false
     @State var showInputAlert = false
     
-    var objects: [Int]
-
     var body: some View {
-    
+            
         return ZStack {
                     
             NavigationView {
                 
-                VStack {
+                List(viewModel.stargazers) { stargazer in
                     
-                    List(objects, id: \.self) { obj in
-                        Text("\(obj)")
-                    }.listStyle(PlainListStyle())
-                    
-                }.navigationBarTitle("Stargazers")
+                    StargazerCell(stargazer: stargazer)
+                        .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                
+                }
+                .background(Color.white)
+                .listStyle(PlainListStyle())
+                .navigationBarTitle("Stargazers")
                 .navigationBarItems(trailing:
+                    
                     Button(action: {
                         
                         // show search
@@ -40,6 +42,31 @@ struct StargazersView: View {
                             .foregroundColor(.blue)
                     }
                 )
+                
+                /*ScrollView {
+                    
+                    VStack {
+                        ForEach(viewModel.stargazers) { stargazer in
+                            StargazerCell(stargazer: stargazer).frame(width: .infinity, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                        }
+                    }
+                    .padding()
+                    
+                }.background(Color.white)
+                .navigationBarTitle("Stargazers")
+                .navigationBarItems(trailing:
+                    
+                    Button(action: {
+                        
+                        // show search
+                        self.showSearch.toggle()
+                        
+                    }) {
+                        Image(systemName: "magnifyingglass.circle.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(.blue)
+                    }
+                )*/
                 
             }.alert(isPresented: $showInputAlert) { () -> Alert in
                 
@@ -61,7 +88,8 @@ struct StargazersView: View {
                             
                         }else{
                             
-                            // view model request data
+                            viewModel.getStargazers(owner: values.owner,
+                                                    repository: values.repository)
                         }
                     }
                 
@@ -77,8 +105,9 @@ struct StargazersView: View {
     }
 }
 
-struct StargazersView_Previews: PreviewProvider {
+/*struct StargazersView_Previews: PreviewProvider {
     static var previews: some View {
-        StargazersView(objects: [1,2,3,4])
+                
+        //StargazersView(viewModel: <#StargazersViewModel#>)
     }
-}
+}*/

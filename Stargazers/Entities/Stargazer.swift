@@ -11,8 +11,7 @@ import UIKit
 struct Stargazer: Identifiable {
     
     var id = UUID()
-    let repositoryName: String
-    let repositoryOwner: String
+    let name: String
     let image: UIImage
     var isLoadingImage: Bool
 }

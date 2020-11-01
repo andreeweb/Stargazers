@@ -11,7 +11,15 @@ import SwiftUI
 struct StargazersApp: App {
     var body: some Scene {
         WindowGroup {
-            StargazersView(objects: [1,2,3,4,5,6,7,8,9,10,11,12,14])
+            
+            let httpService = HTTPService()
+            let githubService = GitHubService(httpService: httpService)
+            let imageService = ImageService(httpService: httpService)
+            
+            let viewModel = StargazersViewModel(githubService: githubService,
+                                                imageService: imageService)
+            
+            StargazersView(viewModel: viewModel)
         }
     }
 }

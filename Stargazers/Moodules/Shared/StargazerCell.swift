@@ -25,15 +25,10 @@ struct StargazerCell: View {
             
             VStack {
              
-                Text(stargazer.repositoryOwner)
-                    .font(.title)
+                Text(stargazer.name)
+                    .font(.title2)
                     .foregroundColor(Color.white)
                     .padding(.leading, 10)
-                
-                Text(stargazer.repositoryName)
-                    .font(.subheadline)
-                    .foregroundColor(Color.white)
-                    .padding(.leading, 15)
             }
             
         }.frame(minWidth: 0,
@@ -51,12 +46,10 @@ struct StargazerCell_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        let owner = "Hello!"
+        let name = "baiyunping333"
         let image = #imageLiteral(resourceName: "avatar-placeholder")
-        let repository = "Repository"
         
-        let stargazer = Stargazer(repositoryName: repository,
-                                  repositoryOwner: owner,
+        let stargazer = Stargazer(name: name,
                                   image: image,
                                   isLoadingImage: false)
         

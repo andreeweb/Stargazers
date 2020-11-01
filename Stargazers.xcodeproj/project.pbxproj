@@ -10,6 +10,7 @@
 		2204EA8F254F4EE900CE4CAB /* Stargazer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2204EA8E254F4EE900CE4CAB /* Stargazer.swift */; };
 		2204EA94254F4F4300CE4CAB /* StargazerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2204EA93254F4F4300CE4CAB /* StargazerCell.swift */; };
 		2204EA9A254F503F00CE4CAB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2204EA99254F503F00CE4CAB /* ColorExtension.swift */; };
+		2204EA9F254F552E00CE4CAB /* StargazersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2204EA9E254F552E00CE4CAB /* StargazersViewModel.swift */; };
 		221EC33F254F451D003AFAEE /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221EC33E254F451D003AFAEE /* SearchResult.swift */; };
 		2253BD44254DC34700CA45F4 /* StargazersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253BD43254DC34700CA45F4 /* StargazersApp.swift */; };
 		2253BD46254DC34700CA45F4 /* StargazersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253BD45254DC34700CA45F4 /* StargazersView.swift */; };
@@ -76,6 +77,7 @@
 		2204EA8E254F4EE900CE4CAB /* Stargazer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stargazer.swift; sourceTree = "<group>"; };
 		2204EA93254F4F4300CE4CAB /* StargazerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerCell.swift; sourceTree = "<group>"; };
 		2204EA99254F503F00CE4CAB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		2204EA9E254F552E00CE4CAB /* StargazersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazersViewModel.swift; sourceTree = "<group>"; };
 		221EC33E254F451D003AFAEE /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		2253BD40254DC34700CA45F4 /* Stargazers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stargazers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2253BD43254DC34700CA45F4 /* StargazersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazersApp.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				2253BD45254DC34700CA45F4 /* StargazersView.swift */,
+				2204EA9E254F552E00CE4CAB /* StargazersViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				22BF73E5254DE3F800A952AB /* GitHubServiceProtocol.swift in Sources */,
 				2253BD44254DC34700CA45F4 /* StargazersApp.swift in Sources */,
 				22BF743A254E0E5800A952AB /* ImageServiceError.swift in Sources */,
+				2204EA9F254F552E00CE4CAB /* StargazersViewModel.swift in Sources */,
 				22BF73CD254DD5AC00A952AB /* HTTPServiceProtocol.swift in Sources */,
 				22BF73DD254DE3E900A952AB /* GitHubService.swift in Sources */,
 				22BF7435254E0E4700A952AB /* ImageServiceProtocol.swift in Sources */,

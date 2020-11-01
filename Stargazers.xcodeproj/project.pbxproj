@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221EC33F254F451D003AFAEE /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221EC33E254F451D003AFAEE /* SearchResult.swift */; };
 		2253BD44254DC34700CA45F4 /* StargazersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253BD43254DC34700CA45F4 /* StargazersApp.swift */; };
 		2253BD46254DC34700CA45F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253BD45254DC34700CA45F4 /* ContentView.swift */; };
 		2253BD48254DC34900CA45F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2253BD47254DC34900CA45F4 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		08356944E57F240DD0FA455B /* Pods-StargazersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StargazersTests.release.xcconfig"; path = "Target Support Files/Pods-StargazersTests/Pods-StargazersTests.release.xcconfig"; sourceTree = "<group>"; };
 		0C65502BCE7CC7D7B7A8019E /* Pods_StargazersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StargazersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1955120F2D63980908F81B1C /* Pods_Stargazers_StargazersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stargazers_StargazersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		221EC33E254F451D003AFAEE /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		2253BD40254DC34700CA45F4 /* Stargazers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stargazers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2253BD43254DC34700CA45F4 /* StargazersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazersApp.swift; sourceTree = "<group>"; };
 		2253BD45254DC34700CA45F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				22BF7462254E3E7600A952AB /* SearchView.swift */,
+				221EC33E254F451D003AFAEE /* SearchResult.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 			files = (
 				22BF73CE254DD5AC00A952AB /* HTTPService.swift in Sources */,
 				22BF73F5254DF3B300A952AB /* Stargazer.swift in Sources */,
+				221EC33F254F451D003AFAEE /* SearchResult.swift in Sources */,
 				22BF7463254E3E7600A952AB /* SearchView.swift in Sources */,
 				2253BD46254DC34700CA45F4 /* ContentView.swift in Sources */,
 				22BF73EA254DE40400A952AB /* GitHubServiceConfig.swift in Sources */,

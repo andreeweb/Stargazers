@@ -11,6 +11,8 @@ struct ContentView: View {
         
     @State private var showSearch = false
     
+    @State var showInputAlert = false
+    
     var objects: [Int]
 
     var body: some View {
@@ -38,14 +40,27 @@ struct ContentView: View {
                             .foregroundColor(.blue)
                     }
                 )
+                
+            }.alert(isPresented: $showInputAlert) { () -> Alert in
+                
+                Alert(title: Text("Missing Input"),
+                             message: Text("Please insert Repository Name AND Repository Owner"),
+                             dismissButton: .default(Text("Ok")))
             }
             
             if showSearch {
                 
-                SearchView(results: { owner, repository in
-                                     
-                    print(owner)
-                    print(repository)
+                SearchView(results: { result in
+                    
+                    if result.owner.trimmingCharacters(in: .whitespaces).isEmpty ||
+                        result.repository.trimmingCharacters(in: .whitespaces).isEmpty{
+                                       
+                        self.showInputAlert.toggle()
+                        
+                    }else{
+                        
+                        // view model request data
+                    }
                     
                     // hide search
                     self.showSearch.toggle()

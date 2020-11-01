@@ -14,7 +14,7 @@ struct SearchView: View {
  
     @State private var isEditing = false
         
-    var results: (String, String) -> Void
+    var results: (SearchResult) -> Void
  
     var body: some View {
         
@@ -55,8 +55,11 @@ struct SearchView: View {
             
             Button(action: {
                 
-                self.results("", "")
+                let searchResult = SearchResult(owner: "",
+                                                repository: "");
                 
+                self.results(searchResult)
+                                
             }) {
                 Text("Close")
             }
@@ -141,7 +144,10 @@ struct SearchView: View {
             
             Button(action: {
                 
-                self.results(self.owner, self.repository)
+                let searchResult = SearchResult(owner: self.owner,
+                                                repository: self.repository);
+                
+                self.results(searchResult)
                 
             }) {
                 Text("Search")
@@ -162,7 +168,7 @@ struct SearchView: View {
 struct SearchBar_Previews: PreviewProvider {
     
     static var previews: some View {
-        SearchView(results: { _,_ in
+        SearchView(results: { _ in
             print("hello")
         })
     }

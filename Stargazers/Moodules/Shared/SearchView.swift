@@ -14,7 +14,7 @@ struct SearchView: View {
  
     @State private var isEditing = false
         
-    var results: (SearchResult) -> Void
+    var results: (SearchResult?) -> Void
  
     var body: some View {
         
@@ -55,10 +55,7 @@ struct SearchView: View {
             
             Button(action: {
                 
-                let searchResult = SearchResult(owner: "",
-                                                repository: "");
-                
-                self.results(searchResult)
+                self.results(nil)
                                 
             }) {
                 Text("Close")
@@ -150,7 +147,9 @@ struct SearchView: View {
                 self.results(searchResult)
                 
             }) {
+                
                 Text("Search")
+            
             }.frame(minWidth: 0,
                     maxWidth: .infinity,
                     minHeight: 0,

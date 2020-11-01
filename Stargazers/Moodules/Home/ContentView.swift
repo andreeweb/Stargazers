@@ -52,16 +52,19 @@ struct ContentView: View {
                 
                 SearchView(results: { result in
                     
-                    if result.owner.trimmingCharacters(in: .whitespaces).isEmpty ||
-                        result.repository.trimmingCharacters(in: .whitespaces).isEmpty{
-                                       
-                        self.showInputAlert.toggle()
+                    if let values = result {
                         
-                    }else{
-                        
-                        // view model request data
+                        if values.owner.trimmingCharacters(in: .whitespaces).isEmpty ||
+                            values.repository.trimmingCharacters(in: .whitespaces).isEmpty{
+                                           
+                            self.showInputAlert.toggle()
+                            
+                        }else{
+                            
+                            // view model request data
+                        }
                     }
-                    
+                
                     // hide search
                     self.showSearch.toggle()
                     

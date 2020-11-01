@@ -18,7 +18,7 @@ struct SearchView: View {
  
     var body: some View {
         
-        VStack {
+        VStack(spacing: 0) {
             
             VStack {
                 
@@ -33,17 +33,18 @@ struct SearchView: View {
             }
             .ignoresSafeArea()
             .padding(.top, 5)
+            .padding(.bottom, 10)
             .background(Color.white)
             
             VStack{}
                 .frame(minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity)
+                       maxWidth: .infinity,
+                       minHeight: 0,
+                       maxHeight: .infinity)
                 .background(Color.gray)
                 .ignoresSafeArea()
                 .opacity(0.8)
-        
+            
         }
     }
     

@@ -11,5 +11,5 @@ import Combine
 protocol GitHubServiceProtocol {
     
     /// It returns the Stargazers for the repository/owner passed
-    func getStargazersForRepositoryOwner(repository: String, owner: String) -> AnyPublisher<[Stargazer], GitHubServiceError>
+    func getStargazersForRepositoryOwner(repository: String, owner: String) -> AnyPublisher<[StargazerData], GitHubServiceError>
 }

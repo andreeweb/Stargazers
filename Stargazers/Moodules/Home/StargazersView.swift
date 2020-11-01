@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct StargazersView: View {
         
     @State private var showSearch = false
     
@@ -77,8 +77,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct StargazersView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(objects: [1,2,3,4])
+        StargazersView(objects: [1,2,3,4])
     }
 }

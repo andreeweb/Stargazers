@@ -1,13 +1,13 @@
 //
-//  Stargazer.swift
-//  Stargazers
+//  StargazerData.swift
+//  StargazerData
 //
 //  Created by MacOS on 10/31/20.
 //
 
 import Foundation
 
-struct Stargazer: Codable {
+struct StargazerData: Codable {
     
     let login: String
     let id: Int

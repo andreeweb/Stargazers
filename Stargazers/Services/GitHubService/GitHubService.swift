@@ -17,7 +17,7 @@ class GitHubService: GitHubServiceProtocol {
         self.httpService = httpService
     }
     
-    func getStargazersForRepositoryOwner(repository: String, owner: String) -> AnyPublisher<[Stargazer], GitHubServiceError> {
+    func getStargazersForRepositoryOwner(repository: String, owner: String) -> AnyPublisher<[StargazerData], GitHubServiceError> {
         
         var url = GitHunServiceConfig.stargazersEndpoint
         url = url.replacingOccurrences(of: "{owner}", with: owner)
@@ -25,7 +25,7 @@ class GitHubService: GitHubServiceProtocol {
         
         return httpService.makeHttpRequest(endpoint: url)
             .map { httpRespose in return httpRespose.data }
-            .decode(type: [Stargazer].self, decoder: JSONDecoder())
+            .decode(type: [StargazerData].self, decoder: JSONDecoder())
             .mapError({ error in
                 
                 switch error {

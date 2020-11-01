@@ -25,6 +25,7 @@ class GitHubServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Stargazers download, correct json")
         
         let httpService = HTTPServiceMock()
+        httpService.jsonType = .ValidStargazersJson
         
         let gitHubService = GitHubService(httpService: httpService)
         
@@ -40,7 +41,7 @@ class GitHubServiceTests: XCTestCase {
                                 
                 XCTAssertNotNil(stargazers)
                 
-                guard (stargazers as Any) is [Stargazer] else {
+                guard (stargazers as Any) is [StargazerData] else {
                     XCTFail("This method should return an array")
                     return
                 }

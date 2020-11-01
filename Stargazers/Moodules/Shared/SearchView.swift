@@ -52,7 +52,7 @@ struct SearchView: View {
         
         return HStack {
             
-            Text("Search")
+            Text(LocalizedStringKey("search"))
                 .font(.system(size: 30))
             
             Spacer()
@@ -62,7 +62,7 @@ struct SearchView: View {
                 self.results(nil)
                                 
             }) {
-                Text("Close")
+                Text(LocalizedStringKey("close"))
             }
             
         }.padding(.horizontal)
@@ -72,7 +72,7 @@ struct SearchView: View {
         
         return HStack {
             
-            TextField("Repository owner...", text: $owner)
+            TextField(LocalizedStringKey("hint_owner"), text: $owner)
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
@@ -107,7 +107,7 @@ struct SearchView: View {
         
         return HStack {
             
-            TextField("Repository name...", text: $repository)
+            TextField(LocalizedStringKey("hint_name"), text: $repository)
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
@@ -151,7 +151,7 @@ struct SearchView: View {
                 
             }) {
                 
-                Text("Search")
+                Text(LocalizedStringKey("search"))
             
             }.frame(minWidth: 0,
                     maxWidth: .infinity,

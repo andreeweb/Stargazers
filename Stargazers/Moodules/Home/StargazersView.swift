@@ -24,7 +24,7 @@ struct StargazersView: View {
                  
                     if viewModel.showEmptyView {
                     
-                        Text("No data, please use the search button for start a new search.")
+                        Text(LocalizedStringKey("data_not_available"))
                             .padding()
                         
                     }else {
@@ -37,7 +37,7 @@ struct StargazersView: View {
                     
                 }
                 .listStyle(PlainListStyle())
-                .navigationBarTitle("Stargazers")
+                .navigationBarTitle(LocalizedStringKey("app_name"))
                 .navigationBarItems(trailing:
                     
                     Button(action: {
@@ -54,9 +54,9 @@ struct StargazersView: View {
                 
             }.alert(isPresented: $showInputAlert) { () -> Alert in
                 
-                Alert(title: Text("Missing Input"),
-                             message: Text("Please insert Repository Name AND Repository Owner"),
-                             dismissButton: .default(Text("Ok")))
+                Alert(title: Text(LocalizedStringKey("missing_input")),
+                             message: Text(LocalizedStringKey("missing_input_text")),
+                             dismissButton: .default(Text(LocalizedStringKey("Ok"))))
             }
             
             if showSearch {

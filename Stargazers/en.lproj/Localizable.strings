@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Stargazers
+
+  Created by MacOS on 11/1/20.
+  
+*/
+
+"app_name" = "Stargazers";
+"search" = "Search";
+"close" = "Close";
+"data_not_available" = "No data, please use the search button for start a new search.";
+"missing_input" = "Missing Input";
+"missing_input_text" = "Please insert Repository Name AND Repository Owner";
+"ok" = "Ok";
+"hint_name" = "Repository name...";
+"hint_owner" = "Repository owner...";

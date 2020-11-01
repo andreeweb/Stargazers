@@ -12,6 +12,7 @@ import UIKit
 final class StargazersViewModel: ObservableObject {
  
     @Published private(set) var stargazers: [Stargazer] = []
+    @Published private(set) var showEmptyView = true
     
     private var subscription: Cancellable? = nil
     private var imageSubscriptions: [Cancellable] = []
@@ -32,9 +33,13 @@ final class StargazersViewModel: ObservableObject {
             .sink( receiveCompletion: { [weak self] completion in
                 
                 switch completion {
-                case .finished: break
-                case .failure: break
-                    // Error
+                case .finished:
+                    self?.showEmptyView = false
+                    break
+                case .failure(let error):
+                    self?.showEmptyView = true
+                    print(error)
+                    break
                 }
             }, receiveValue: { [weak self] (stargazers) in
                 
@@ -44,11 +49,18 @@ final class StargazersViewModel: ObservableObject {
     
     private func parseData(data: [StargazerData]){
         
+        // clear array
+        stargazers = []
+        
+        if data.count == 0 {
+            showEmptyView = true
+        }
+        
         for stargazerData in data {
             
             let stargazer = Stargazer(name: stargazerData.login,
                                       image: #imageLiteral(resourceName: "avatar-placeholder"),
-                                      isLoadingImage: false)
+                                      isLoadingImage: true)
             
             stargazers.append(stargazer)
             
@@ -89,8 +101,6 @@ final class StargazersViewModel: ObservableObject {
         let stargazer = Stargazer(name: stargazer.login,
                                   image: backgroundImage,
                                   isLoadingImage: false)
-        
-        stargazers.append(stargazer)
         
         if let i = stargazers.firstIndex(where: { $0.name == stargazer.name }) {
             stargazers[i] = stargazer

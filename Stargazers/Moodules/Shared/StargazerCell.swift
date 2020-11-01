@@ -15,13 +15,23 @@ struct StargazerCell: View {
         
         HStack {
                                     
-            Image(uiImage: stargazer.image)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 70, height: 70, alignment: .center)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.white, lineWidth: 5))
-                .padding(.leading, 20)
+            ZStack{
+                Image(uiImage: stargazer.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 70, height: 70, alignment: .center)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 5))
+                
+                if stargazer.isLoadingImage {
+                    
+                    ActivityIndicator(isAnimating: .constant(true),
+                                      color: .constant(UIColor.gray),
+                                      style: .medium)
+                        .frame(alignment: .center)
+                }
+            }
+            .padding(.leading, 20)
             
             VStack {
              

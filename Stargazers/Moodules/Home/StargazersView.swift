@@ -20,13 +20,22 @@ struct StargazersView: View {
                     
             NavigationView {
                 
-                List(viewModel.stargazers) { stargazer in
+                VStack {
+                 
+                    if viewModel.showEmptyView {
                     
-                    StargazerCell(stargazer: stargazer)
-                        .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                
+                        Text("No data, please use the search button for start a new search.")
+                            .padding()
+                        
+                    }else {
+                        
+                        List(viewModel.stargazers) { stargazer in
+                            StargazerCell(stargazer: stargazer)
+                                .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                        }
+                    }
+                    
                 }
-                .background(Color.white)
                 .listStyle(PlainListStyle())
                 .navigationBarTitle("Stargazers")
                 .navigationBarItems(trailing:
@@ -42,31 +51,6 @@ struct StargazersView: View {
                             .foregroundColor(.blue)
                     }
                 )
-                
-                /*ScrollView {
-                    
-                    VStack {
-                        ForEach(viewModel.stargazers) { stargazer in
-                            StargazerCell(stargazer: stargazer).frame(width: .infinity, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                        }
-                    }
-                    .padding()
-                    
-                }.background(Color.white)
-                .navigationBarTitle("Stargazers")
-                .navigationBarItems(trailing:
-                    
-                    Button(action: {
-                        
-                        // show search
-                        self.showSearch.toggle()
-                        
-                    }) {
-                        Image(systemName: "magnifyingglass.circle.fill")
-                            .font(.largeTitle)
-                            .foregroundColor(.blue)
-                    }
-                )*/
                 
             }.alert(isPresented: $showInputAlert) { () -> Alert in
                 

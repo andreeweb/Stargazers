@@ -30,17 +30,20 @@ struct SearchView: View {
             
                 SearchButton()
                             
-            }.background(Color.white)
+            }
+            .ignoresSafeArea()
+            .padding(.top, 5)
+            .background(Color.white)
             
             VStack{}
                 .frame(minWidth: 0,
                 maxWidth: .infinity,
                 minHeight: 0,
-                maxHeight: .infinity
-            )
-            .background(Color.gray)
-            .ignoresSafeArea()
-            .opacity(0.8)   
+                maxHeight: .infinity)
+                .background(Color.gray)
+                .ignoresSafeArea()
+                .opacity(0.8)
+        
         }
     }
     
@@ -62,7 +65,6 @@ struct SearchView: View {
             }
             
         }.padding(.horizontal)
-        .padding(.top)
     }
     
     private func SearchOwnerField() -> some View {
@@ -160,7 +162,6 @@ struct SearchView: View {
             .background(Color.blue)
             
         }.padding(.horizontal, 10)
-        .frame(alignment: .leading)
     }
 }
 

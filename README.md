@@ -1,5 +1,8 @@
 # Stargazers
-Simple iOS application that shows the stargazers list of a GitHub repository. This App has been developed with SwiftUI, Combine and MVVM Architecture
+Simple iOS application that shows the stargazers list of a GitHub repository. It uses the GitHub APIs.
+
+## Technologies
+SwiftUI and Combine used in a MVVM architecture.
 
 ## Screenshots
 <p align="center">

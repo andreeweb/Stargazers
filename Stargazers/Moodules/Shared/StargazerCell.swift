@@ -36,7 +36,7 @@ struct StargazerCell: View {
             VStack {
              
                 Text(stargazer.name)
-                    .font(.title2)
+                    .font(.title)
                     .foregroundColor(Color.white)
                     .padding(.leading, 10)
             }
@@ -63,6 +63,6 @@ struct StargazerCell_Previews: PreviewProvider {
                                   image: image,
                                   isLoadingImage: false)
         
-        StargazerCell(stargazer: stargazer)
+        return StargazerCell(stargazer: stargazer)
     }
 }

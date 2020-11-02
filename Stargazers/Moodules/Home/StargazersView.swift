@@ -49,7 +49,8 @@ struct StargazersView: View {
                         Image(systemName: "magnifyingglass.circle.fill")
                             .font(.largeTitle)
                             .foregroundColor(.blue)
-                    }
+                        
+                    }.accessibility(identifier: "search_bar_button")
                 )
                 
             }.alert(isPresented: $showInputAlert) { () -> Alert in
@@ -72,7 +73,7 @@ struct StargazersView: View {
                             
                         }else{
                             
-                            viewModel.getStargazers(owner: values.owner,
+                            self.viewModel.getStargazers(owner: values.owner,
                                                     repository: values.repository)
                         }
                     }

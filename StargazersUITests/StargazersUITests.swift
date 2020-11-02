@@ -51,4 +51,29 @@ class StargazersUITests: XCTestCase {
         // count elements in list
         XCTAssert(app.tables.staticTexts.count > 0)
     }
+    
+    func testSearchInputNotValid() throws {
+        
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+        
+        let goSearchButton = app.buttons["search_bar_button"]
+        XCTAssert(goSearchButton.exists)
+        goSearchButton.tap()
+        
+        let textOwner = app.textFields["search_owner_text"]
+        XCTAssert(textOwner.exists)
+        textOwner.tap()
+        textOwner.typeText("octocat")
+        
+        let searchSearchButton = app.buttons["search_search_button"]
+        XCTAssert(searchSearchButton.exists)
+        searchSearchButton.tap()
+        
+        addUIInterruptionMonitor(withDescription: "Input Alert") { (alert) -> Bool in
+          alert.buttons["Ok"].tap()
+          return true
+        }
+    }
 }

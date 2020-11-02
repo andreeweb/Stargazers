@@ -16,6 +16,8 @@ struct StargazersView: View {
     
     var body: some View {
             
+        UITableView.appearance().separatorStyle = .none
+        
         return ZStack {
                     
             NavigationView {
@@ -26,6 +28,13 @@ struct StargazersView: View {
                     
                         Text(LocalizedStringKey("data_not_available"))
                             .padding()
+                        
+                    }else if viewModel.loading {
+                        
+                        ActivityIndicator(isAnimating: .constant(true),
+                                          color: .constant(UIColor.gray),
+                                          style: .large)
+                            .frame(alignment: .center)
                         
                     }else {
                         

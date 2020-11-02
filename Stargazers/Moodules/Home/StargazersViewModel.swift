@@ -13,6 +13,7 @@ final class StargazersViewModel: ObservableObject {
  
     @Published private(set) var stargazers: [Stargazer] = []
     @Published private(set) var showEmptyView = true
+    @Published private(set) var loading = false
     
     private var subscription: Cancellable? = nil
     private var imageSubscriptions: [Cancellable] = []
@@ -29,15 +30,20 @@ final class StargazersViewModel: ObservableObject {
     
     func getStargazers(owner: String, repository: String) {
                     
+        showEmptyView = false
+        loading = true
+        
         subscription = githubService.getStargazersForRepositoryOwner(repository: repository, owner: owner)
             .sink( receiveCompletion: { [weak self] completion in
                 
                 switch completion {
                 case .finished:
                     self?.showEmptyView = false
+                    self?.loading = false
                     break
                 case .failure(let error):
                     self?.showEmptyView = true
+                    self?.loading = false
                     print(error)
                     break
                 }

@@ -44,6 +44,7 @@ struct SearchView: View {
                        minHeight: 0,
                        maxHeight: .infinity)
                 .background(Color.gray)
+                .edgesIgnoringSafeArea(.all)
                 .opacity(0.8)
             
         }

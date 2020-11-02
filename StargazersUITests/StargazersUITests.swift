@@ -28,7 +28,27 @@ class StargazersUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let searchButton = app.buttons["search_bar_button"]
-        XCTAssert(searchButton.exists)
+        let goSearchButton = app.buttons["search_bar_button"]
+        XCTAssert(goSearchButton.exists)
+        goSearchButton.tap()
+        
+        let textOwner = app.textFields["search_owner_text"]
+        XCTAssert(textOwner.exists)
+        textOwner.tap()
+        textOwner.typeText("octocat")
+
+        let textRepository = app.textFields["search_repository_text"]
+        XCTAssert(textRepository.exists)
+        textRepository.tap()
+        textRepository.typeText("hello-world")
+        
+        let searchSearchButton = app.buttons["search_search_button"]
+        XCTAssert(searchSearchButton.exists)
+        searchSearchButton.tap()
+        
+        sleep(5)
+        
+        // count elements in list
+        XCTAssert(app.tables.staticTexts.count > 0)
     }
 }

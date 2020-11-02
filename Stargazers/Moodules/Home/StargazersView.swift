@@ -32,7 +32,7 @@ struct StargazersView: View {
                         List(viewModel.stargazers) { stargazer in
                             StargazerCell(stargazer: stargazer)
                                 .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                        }
+                        }.accessibility(identifier: "stargazers_list")
                     }
                     
                 }

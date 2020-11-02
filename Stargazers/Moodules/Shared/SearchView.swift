@@ -74,6 +74,7 @@ struct SearchView: View {
         return HStack {
             
             TextField(LocalizedStringKey("hint_owner"), text: $owner)
+                .accessibility(identifier: "search_owner_text")
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
@@ -109,6 +110,7 @@ struct SearchView: View {
         return HStack {
             
             TextField(LocalizedStringKey("hint_name"), text: $repository)
+                .accessibility(identifier: "search_repository_text")
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
@@ -162,6 +164,7 @@ struct SearchView: View {
             ).cornerRadius(10)
             .accentColor(.white)
             .background(Color.blue)
+            .accessibility(identifier: "search_search_button")
             
         }.padding(.horizontal, 10)
     }
